@@ -31,8 +31,8 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 8. MongoDB / Mongoose
 
 ## Resources
-https://react-bootstrap.netlify.app/docs/components/navs/
-https://react-bootstrap.netlify.app/docs/components/carousel/
+- https://react-bootstrap.netlify.app/docs/components/navs/
+- https://react-bootstrap.netlify.app/docs/components/carousel/
 
 ## References
 1. 
