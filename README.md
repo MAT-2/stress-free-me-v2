@@ -9,6 +9,7 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 * [User Story](#user-story)
 * [Acceptance Criteria](#acceptance-criteria)
 * [Technologies Used](#technologies-used)
+* [Resources](#resources)
 * [References](#references)
 * [Development Goals](#development-goals)
 * [Links](#links)
@@ -28,6 +29,10 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 6. React Bootstrap / Bootstrap
 7. React ChartJS / ChartJS
 8. MongoDB / Mongoose
+
+## Resources
+https://react-bootstrap.netlify.app/docs/components/navs/
+https://react-bootstrap.netlify.app/docs/components/carousel/
 
 ## References
 1. 
