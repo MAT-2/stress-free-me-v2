@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { User, Thought } = require('../models');
+const { User, Thought, Survey } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const thoughtSeeds = require('./thoughtSeeds.json');
 const surveySeeds = require('./surveySeeds.json');
@@ -13,7 +13,8 @@ db.once('open', async () => {
 
     await cleanDB('Survey', 'surveys');
 
-    await User.create(userSeeds);
+   const users = await User.create(userSeeds);
+    
 
     for (let i = 0; i < thoughtSeeds.length; i++) {
       const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
@@ -30,7 +31,7 @@ db.once('open', async () => {
     for (let i = 0; i < surveySeeds.length; i++) {
       const { _id} = await Survey.create(surveySeeds[i]);
       const user = await User.findOneAndUpdate(
-        { username: thoughtAuthor }, //What can I add in here?
+        {_id: users[i]._id},
         {
           $addToSet: {
             surveys: _id,

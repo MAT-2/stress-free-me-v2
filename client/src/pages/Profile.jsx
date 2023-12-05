@@ -1,5 +1,6 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import Card from "react-bootstrap/Card";
 
 import ChartCards from '../components/ChartCards';
 
@@ -47,7 +48,9 @@ const Profile = () => {
         </div>
 
         <div className="col-10 mb-5">
-          <ChartCards />
+          <Card>
+            <SurveyDoughnut />
+          </Card>
         </div>
 
       </div>
