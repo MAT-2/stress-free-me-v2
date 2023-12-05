@@ -7,6 +7,18 @@ const typeDefs = `
     thoughts: [Thought]!
   }
 
+  type Survey {
+    _id: ID
+    sleep_quality: Int
+    headaches: Int
+    performance: Int
+    workload: Int
+    hobbies: Int
+    stress: Int
+    therapy: Int
+    outside: Int
+  }
+
   type Thought {
     _id: ID
     thoughtText: String
@@ -24,6 +36,7 @@ const typeDefs = `
     user(username: String!): User
     thoughts(username: String): [Thought]
     thought(thoughtId: ID!): Thought
+    survey(surveyId: ID!): Survey
     me: User
   }
 
@@ -32,6 +45,7 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     addThought(thoughtText: String!): Thought
     removeThought(thoughtId: ID!): Thought
+    updateThought(thoughtId: ID!): Thought
   }
 `;
 
