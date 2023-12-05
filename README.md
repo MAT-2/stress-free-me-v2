@@ -34,8 +34,10 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 7. React ChartJS / ChartJS
 8. MongoDB / Mongoose
 
-## Resources
+## References
+1.
 
+## Resources
 - https://react-bootstrap.netlify.app/docs/components/navs/
 - https://react-bootstrap.netlify.app/docs/components/carousel/
 - https://react-bootstrap.netlify.app/docs/forms/form-control
@@ -44,12 +46,11 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 - https://getbootstrap.com/docs/5.0/utilities/visibility/#:~:text=Elements%20with%20the%20.,assistive%20technology%2Fscreen%20reader%20users.
 - https://blog.stackademic.com/react-examples-1-integrating-bootstrap-for-a-login-page-f261e5558375
 - https://react-bootstrap.netlify.app/docs/forms/checks-radios
+- https://react-chartjs-2.js.org/examples/doughnut-chart
 
-## References
-
-1.
 
 ## Development Goals
+1. 
 
 ## Links
 
@@ -58,7 +59,6 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 ## Preview
 
 ### EX1
-
 N/A
 
 ## License
