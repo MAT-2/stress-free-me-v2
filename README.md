@@ -43,6 +43,7 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 - https://react-bootstrap.netlify.app/docs/components/buttons/
 - https://getbootstrap.com/docs/5.0/utilities/visibility/#:~:text=Elements%20with%20the%20.,assistive%20technology%2Fscreen%20reader%20users.
 - https://blog.stackademic.com/react-examples-1-integrating-bootstrap-for-a-login-page-f261e5558375
+- https://react-bootstrap.netlify.app/docs/forms/checks-radios
 
 ## References
 
