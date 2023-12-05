@@ -1,26 +1,30 @@
-# STRESS FREE ME  (v2.0)
+# STRESS FREE ME (v2.0)
+
 UTA Coding Bootcamp Final Project 3
 
 ## Description
+
 Start on your journey of stress relief with this daily stress tracking app!
 Take our free quiz that analyzes a number of factors influencing your stress levels, review your results, and make the necessary changes to reduce stress and improve your lifestyle!
 
 ## Table of Contents
-* [User Story](#user-story)
-* [Acceptance Criteria](#acceptance-criteria)
-* [Technologies Used](#technologies-used)
-* [Resources](#resources)
-* [References](#references)
-* [Development Goals](#development-goals)
-* [Links](#links)
-* [Preview](#preview)
-* [License](#license)
+
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Technologies Used](#technologies-used)
+- [Resources](#resources)
+- [References](#references)
+- [Development Goals](#development-goals)
+- [Links](#links)
+- [Preview](#preview)
+- [License](#license)
 
 ## User Story
 
 ## Acceptance Criteria
 
 ## Technologies Used
+
 1. HTML
 2. CSS
 3. Node.js
@@ -31,26 +35,36 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 8. MongoDB / Mongoose
 
 ## Resources
+
 - https://react-bootstrap.netlify.app/docs/components/navs/
 - https://react-bootstrap.netlify.app/docs/components/carousel/
+- https://react-bootstrap.netlify.app/docs/forms/form-control
+- https://react-bootstrap.netlify.app/docs/components/cards/
+- https://react-bootstrap.netlify.app/docs/components/buttons/
+- https://getbootstrap.com/docs/5.0/utilities/visibility/#:~:text=Elements%20with%20the%20.,assistive%20technology%2Fscreen%20reader%20users.
+- https://blog.stackademic.com/react-examples-1-integrating-bootstrap-for-a-login-page-f261e5558375
 
 ## References
-1. 
+
+1.
 
 ## Development Goals
 
 ## Links
+
 ### <a href="https://github.com/MAT-2/stress-free-me-v2">GitHub Repository</a>
 
 ## Preview
 
 ### EX1
+
 N/A
 
 ## License
+
 <img src='https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge'>
 
-Copyright  2023  Stress Free Me
+Copyright 2023 Stress Free Me
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

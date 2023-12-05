@@ -27,7 +27,7 @@ const Profile = () => {
   if (!user?.username) {
     return (
       <h4>
-        You need to be logged in to view your profile and results. Use the navigation links above to
+        You need to be logged in to view your profile and survey results. Use the navigation links above to
         sign up or log in!
       </h4>
     );
@@ -40,23 +40,18 @@ const Profile = () => {
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
-        <div className="col-12 col-md-10 mb-5">
-          <ChartCards
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
-            showTitle={false}
-            showUsername={false}
-          />
+        <div>
+            <button class="" style="" type="">
+                Start Survey
+            </button>
         </div>
-        {!userParam && (
-          <div
-            className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: '1px dotted #1a1a1a' }}
-          >
-            <ThoughtForm />
-          </div>
-        )}
+
+        <div className="col-10 mb-5">
+          <ChartCards />
+        </div>
+
       </div>
+
     </div>
   );
 };

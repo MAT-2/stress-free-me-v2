@@ -22,6 +22,15 @@ function Navbar() {
           Login
         </Nav.Link>
       </Nav.Item>
+      <Nav.Item className="invisible">
+        <Nav.Link
+          href="/Login"
+          className={homePage === "/Login" ? "nav-link active" : "nav-link"}
+        >
+          Logout
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item></Nav.Item>
       <Nav.Item>
         <Nav.Link
           href="/Profile"
@@ -50,4 +59,4 @@ function Navbar() {
   );
 }
 
-export default Navbar();
+export default Navbar;
