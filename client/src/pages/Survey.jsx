@@ -53,6 +53,7 @@ function SurveyQuestions() {
   const nextQuestion = () => {
     setActiveQuestion((prev) => prev +1)
   }
+
   return (
     <div>
       <Card style={{ width: "25rem" }}>
