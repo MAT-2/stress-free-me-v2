@@ -2,12 +2,63 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+//Use state to cycle through the questions.
+//Only things changing would be question names, and the next cycled question. Form is the same.
+
+//Insert an array of the qustions.
+const survey = {
+  questions: [
+    {
+      question: "Question 1: How would you rate your sleep quality?",
+    },
+    {
+      question:
+        "Question 2: How many times a week do you suffer from headaches?",
+    },
+    {
+      question:
+        "Question 3: How would you rate your academic performance in school?",
+    },
+    {
+      question:
+        "Question 4: Please rate your study load you receive per week from school.",
+    },
+    {
+      question:
+        "Question 5: How often do you participate extracuricular activities?",
+    },
+    {
+      question: "Question 6: Do you handle your stress well?",
+    },
+    {
+      question: "Question 7: How often do you go to therapy?",
+    },
+    {
+      question: "Question 8: How often do you go outside?",
+    },
+  ],
+};
+
 function SurveyQuestions() {
+  const [activeQuestion, setActiveQuestion] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+
+  //Retrieve the question
+  const { questions } = survey;
+
+  //Deconstruct the question
+  const {question} = question[activeQuestion]
+
+  //Creating a click event to move onto the next question.
+  const nextQuestion = () => {
+    setActiveQuestion((prev) => prev +1)
+  }
+
   return (
     <div>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 1</Card.Title>
-        <p>How would you rate your sleep quality</p>
+        <h2>{questions.[activeQuestion].question}</h2>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -54,13 +105,12 @@ function SurveyQuestions() {
             </div>
           ))}
         </Form>
-        <Button variant="secondary" size="lg" id="nextButton">
+        <Button variant="secondary" size="lg" id="nextButton" onClick={nextQuestion}>
           Next Question
         </Button>
       </Card>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 2</Card.Title>
-        <p>How many times a week do you suffer from headaches?</p>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -109,11 +159,13 @@ function SurveyQuestions() {
         </Form>
         <Button variant="secondary" size="lg" id="nextButton">
           Next Question
+        </Button>
+        <Button variant="secondary" size="lg" id="previousButton">
+          Previous Question
         </Button>
       </Card>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 3</Card.Title>
-        <p>How would you rate your academic performance in school?</p>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -162,11 +214,13 @@ function SurveyQuestions() {
         </Form>
         <Button variant="secondary" size="lg" id="nextButton">
           Next Question
+        </Button>
+        <Button variant="secondary" size="lg" id="previousButton">
+          Previous Question
         </Button>
       </Card>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 4</Card.Title>
-        <p>Please rate your study load you receive per week from school.</p>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -215,11 +269,13 @@ function SurveyQuestions() {
         </Form>
         <Button variant="secondary" size="lg" id="nextButton">
           Next Question
+        </Button>
+        <Button variant="secondary" size="lg" id="previousButton">
+          Previous Question
         </Button>
       </Card>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 5</Card.Title>
-        <p>How often do you participate extracuricular activities?</p>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -268,11 +324,13 @@ function SurveyQuestions() {
         </Form>
         <Button variant="secondary" size="lg" id="nextButton">
           Next Question
+        </Button>
+        <Button variant="secondary" size="lg" id="previousButton">
+          Previous Question
         </Button>
       </Card>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 6</Card.Title>
-        <p>Do you handle your stress well?</p>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -321,11 +379,13 @@ function SurveyQuestions() {
         </Form>
         <Button variant="secondary" size="lg" id="nextButton">
           Next Question
+        </Button>
+        <Button variant="secondary" size="lg" id="previousButton">
+          Previous Question
         </Button>
       </Card>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 7</Card.Title>
-        <p>How often do you go to therapy?</p>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -375,10 +435,12 @@ function SurveyQuestions() {
         <Button variant="secondary" size="lg" id="nextButton">
           Next Question
         </Button>
+        <Button variant="secondary" size="lg" id="previousButton">
+          Previous Question
+        </Button>
       </Card>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 8</Card.Title>
-        <p>How often do you go outside?</p>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -426,7 +488,10 @@ function SurveyQuestions() {
           ))}
         </Form>
         <Button variant="secondary" size="lg" id="nextButton">
-          Next Question
+          Submit Survey
+        </Button>
+        <Button variant="secondary" size="lg" id="previousButton">
+          Previous Question
         </Button>
       </Card>
     </div>
