@@ -5,6 +5,7 @@ const typeDefs = `
     email: String
     password: String
     thoughts: [Thought]!
+    surveys: [Survey]!
   }
 
   type Survey {
