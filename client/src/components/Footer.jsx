@@ -1,4 +1,4 @@
-import Nav from "react-bootstrap/Nav";
+import Card from "react-bootstrap/Card";
 import { useLocation } from "react-router-dom";
 
 import xLogo from '../../public/x-logo';
@@ -10,8 +10,7 @@ function Footer() {
   const homePage = useLocation().pathname;
 
   return (
-    <Nav className="justify-content-end" activeKey="/home">
-
+    <Card.Footer className="text-center">
         <div>
             <a href="https://github.com/MAT-2/stress-free-me-v2">
                 <img src={githubLogo} alt="Github Logo"></img>
@@ -33,7 +32,7 @@ function Footer() {
             </a>
         </div>
 
-    </Nav>
+    </Card.Footer>
   );
 };
 
