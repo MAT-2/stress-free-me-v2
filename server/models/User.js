@@ -18,7 +18,19 @@ const user = new Schema({
         type: String,
         required: true,
         minlength: 8,
-    }
+    },
+    thoughts: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Thought',
+        },
+      ],
+      surveys: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Survey',
+        },
+      ],
 });
 
 user.pre('save', async function (next) {
