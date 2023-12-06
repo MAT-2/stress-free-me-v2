@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-import carouselText from 'components/carouselText'
+import carouselText from './src/components/carouselText'
 import React from 'react';
 import {
   StyleSheet,
@@ -9,7 +9,7 @@ import {
   Text,
   Alert,
 } from 'react-native';
-import Nav from './components/Nav';
+import Navbar from '.src/components/Navbar';
 
 const Home = () => (
     
@@ -64,7 +64,7 @@ const Home = () => (
     </SafeAreaView>
 );
 
-const styles =Stylesheet.create({
+const styles =StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
