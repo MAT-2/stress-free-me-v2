@@ -35,7 +35,7 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 8. MongoDB / Mongoose
 
 ## References
-1.
+1. Ian Darland - Class TA, helped with various tasks, to include server/DB connection, React state
 
 ## Resources
 - https://react-bootstrap.netlify.app/docs/components/navs/

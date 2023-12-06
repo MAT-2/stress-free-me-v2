@@ -1,6 +1,8 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useState } from "react";
 
 //Use state to cycle through the questions.
 //Only things changing would be question names, and the next cycled question. Form is the same.
@@ -41,24 +43,27 @@ const survey = {
 
 function SurveyQuestions() {
   const [activeQuestion, setActiveQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState("");
+  // const [selectedAnswer, setSelectedAnswer] = useState("");
 
   //Retrieve the question
   const { questions } = survey;
 
-  //Deconstruct the question
-  const {question} = question[activeQuestion]
-
   //Creating a click event to move onto the next question.
   const nextQuestion = () => {
-    setActiveQuestion((prev) => prev +1)
-  }
+    setActiveQuestion((prev) => prev + 1);
+    // setSelectedAnswer
+    // ? {
+    //   ...prev,
+
+    // }
+    // : {}
+  };
 
   return (
     <div>
       <Card style={{ width: "25rem" }}>
         <Card.Title>Question 1</Card.Title>
-        <h2>{questions.[activeQuestion].question}</h2>
+        <h2>{questions[activeQuestion].question}</h2>
         <Form>
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -105,11 +110,16 @@ function SurveyQuestions() {
             </div>
           ))}
         </Form>
-        <Button variant="secondary" size="lg" id="nextButton" onClick={nextQuestion}>
+        <Button
+          variant="secondary"
+          size="lg"
+          id="nextButton"
+          onClick={nextQuestion}
+        >
           Next Question
         </Button>
       </Card>
-      <Card style={{ width: "25rem" }}>
+      {/* <Card style={{ width: "25rem" }}>
         <Card.Title>Question 2</Card.Title>
         <Form>
           {["radio"].map((type) => (
@@ -493,7 +503,7 @@ function SurveyQuestions() {
         <Button variant="secondary" size="lg" id="previousButton">
           Previous Question
         </Button>
-      </Card>
+      </Card> */}
     </div>
   );
 }
