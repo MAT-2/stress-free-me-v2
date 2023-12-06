@@ -9,11 +9,12 @@ import {
   Text,
   Alert,
 } from "react-native";
-import Nav from "./components/Navbar";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <>
+      <Navbar />
       <Carousel>
         <Carousel.Item interval={5000}>
           <carouselText text="First Slide" />
