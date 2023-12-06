@@ -46,7 +46,8 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     addThought(thoughtText: String!): Thought
     removeThought(thoughtId: ID!): Thought
-    updateThought(thoughtId: ID!): Thought
+    updateThought(thoughtId: ID!, thoughtText: String!): Thought
+    userSurveyResponse( sleep_quality: Int, headaches: Int, performance: Int, workload: Int, hobbies: Int, stress: Int, therapy: Int, outside: Int): Survey
   }
 `;
 
