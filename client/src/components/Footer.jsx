@@ -31,7 +31,6 @@ function Footer() {
                 <img src={facebookLogo} alt="Facebook Logo"></img>
             </a>
         </div>
-
     </Card.Footer>
   );
 };
