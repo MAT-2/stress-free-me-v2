@@ -8,7 +8,9 @@ const resolvers = {
       return User.find().populate("thoughts");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate("thoughts").populate("surveys");
+      return User.findOne({ username })
+        .populate("thoughts")
+        .populate("surveys");
     }, //This is for testing purposes only
     thoughts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -17,17 +19,13 @@ const resolvers = {
     thought: async (parent, { thoughtId }) => {
       return Thought.findOne({ _id: thoughtId });
     },
-    survey: async (parent, { surveyId }) => {// show the survey questions?
-      return Survey.findOne({ _id: surveyId }); //can this just be find?
-    }, //am i going to see the users input in this query? 
-    // result: async (parent, { surveyId }) => {
-    //   return Survey.findOne({ _id: surveyId });
-    //   //result is through chartjs
-    // },
+    survey: async (parent, { surveyId }) => {
+      return Survey.findOne({ _id: surveyId }); 
+    }, 
     me: async (parent, args, context) => {
       //=profile page
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("thoughts");
+        return User.findOne({ _id: context.user._id }).populate("thoughts").populate("surveys");
       }
       throw AuthenticationError;
     },
@@ -56,17 +54,18 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, { thoughtText }, context) => { //POST
+    addThought: async (parent, { thoughtText }, context) => {
+      //POST
       if (context.user) {
         const thought = await Thought.create({
           thoughtText,
           thoughtAuthor: context.user.username,
         });
 
-        await User.findOneAndUpdate( 
+        await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { thoughts: thought._id } }, 
-          {new: true}
+          { $addToSet: { thoughts: thought._id } },
+          { new: true }
         );
 
         return thought;
@@ -74,26 +73,27 @@ const resolvers = {
       throw AuthenticationError;
       ("You need to be logged in!");
     },
-    updateThought: async (parent,{ thoughtText }, context) => {
-      if(context.user) {
-        const thought= await Thought.findOneAndUpdate({
-          thoughtText,
-          thoughtAuthor: context.user.username,
-        },
-        {
-          $set: {
-            thoughtText: 'Updated',
-            updatedAt: new Date(),
+    updateThought: async (parent, { thoughtId, thoughtText }, context) => {
+      if (context.user) {
+        const thought = await Thought.findOneAndUpdate(
+          {
+            _id: thoughtId,
+            thoughtAuthor: context.user.username,
           },
-        },
-        {new: true}
+          {
+            $set: {
+              thoughtText,
+              updatedAt: new Date(),
+            },
+          },
+          { new: true }
         );
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $push: { thoughts: thought._id } },
-          {new: true}
+          { new: true, upsert: true  }
         );
-  
+
         return thought;
       }
       throw AuthenticationError;
@@ -104,27 +104,54 @@ const resolvers = {
           _id: thoughtId,
           thoughtAuthor: context.user.username,
         });
-  
+
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: { thoughts: thought._id } }
         );
-  
+
         return thought;
       }
       throw AuthenticationError;
     },
+    userSurveyResponse: async (
+      parent,
+      {
+        sleep_quality,
+        headaches,
+        performance,
+        workload,
+        hobbies,
+        stress,
+        therapy,
+        outside,
+      },
+      context
+    ) => {
+      if (context.user) {
+        const survey = await Survey.create({
+          sleep_quality, 
+          headaches,
+          performance,
+          workload,
+          hobbies,
+          stress,
+          therapy,
+          outside,
+      });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $push: { surveys: survey._id } },
+          { new: true }
+        );
+
+        return survey;
+      }
+      throw AuthenticationError;
+    },
   },
-
-
 };
 
 module.exports = resolvers;
 
-
-//Survey give a numeric value to each questions
-//make it a point system 
-//store mutation to add the survey.
-//user needs to have an array of survey
-//id of every survey in the user like the thought
-//store answer 
