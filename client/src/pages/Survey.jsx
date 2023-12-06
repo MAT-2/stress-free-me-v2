@@ -74,14 +74,15 @@ function SurveyQuestions() {
 
   //Creating a click event to go to previous question.
 
-  const previousQuestion = () => {
-    if (activeQuestion === survey.length + 1) {
-      //TODO: Insert location.replace to go to results page once questions are cycled through completely.
-    } else {
-      setActiveQuestion((prev) => prev - 1);
-      //TODO: populate question here, will need to have the saved responses using state.
-    }
-  };
+  // const previousQuestion = () => {
+  //   if (activeQuestion === survey.length + 1) {
+  //TODO: Insert location.replace to go to results page once questions are cycled through completely.
+  //   } else {
+  //     setActiveQuestion((prev) => prev - 1);
+  //TODO: populate question here, will need to have the saved responses using state.
+  //     onValueChange();
+  //   }
+  //};
 
   return (
     <div>
@@ -152,14 +153,14 @@ function SurveyQuestions() {
         >
           Next Question
         </Button>
-        <Button
+        {/* <Button
           variant="secondary"
           size="lg"
           id="nextButton"
           onClick={previousQuestion}
         >
           Previous Question
-        </Button>
+        </Button> */}
       </Card>
       {/* <Card style={{ width: "25rem" }}>
         <Card.Title>Question 2</Card.Title>
