@@ -8,8 +8,8 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { Outlet } from "react-router-dom";
 import Nav from "./components/Navbar";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,11 +40,11 @@ function App() {
     <ApolloProvider client={client}>
       <Nav />
       <div className="flex-column justify-flex-start min-100-vh">
-        <Header />
+        {/* <Header /> */}
         <div className="container">
           <Outlet />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </ApolloProvider>
   );
