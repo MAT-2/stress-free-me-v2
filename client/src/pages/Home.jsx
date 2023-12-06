@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-import Carousel from 'react-bootstrap/Carousel';
-import carouselText from './src/components/carouselText'
-import React from 'react';
-=======
 import Carousel from "react-bootstrap/Carousel";
 import carouselText from "components/carouselText";
 import React from "react";
->>>>>>> a0f48c8442ff2a964270052e463025ab918557e5
+
 import {
   StyleSheet,
   Button,
@@ -14,17 +9,15 @@ import {
   SafeAreaView,
   Text,
   Alert,
-<<<<<<< HEAD
-} from 'react-native';
-import Navbar from '.src/components/Navbar';
-=======
 } from "react-native";
-import Nav from "./components/Navbar";
->>>>>>> a0f48c8442ff2a964270052e463025ab918557e5
+
+import Navbar from "../components/Navbar";
+
 
 const Home = () => {
   return (
     <>
+      <Navbar />
       <Carousel>
         <Carousel.Item interval={5000}>
           <carouselText text="First Slide" />
@@ -75,20 +68,6 @@ const Home = () => {
   );
 };
 
-<<<<<<< HEAD
-const styles =StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        marginHorizontal: 16,
-    },
-    title: {
-        textAlign: 'center',
-        marginVertical: ,
-    },
-    }
-);
-=======
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -100,5 +79,5 @@ const styles = StyleSheet.create({
     marginVertical: "2px",
   },
 });
->>>>>>> a0f48c8442ff2a964270052e463025ab918557e5
+
 export default Home;
