@@ -35,9 +35,11 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 8. MongoDB / Mongoose
 
 ## References
+
 1. Ian Darland - Class TA, helped with various tasks, to include server/DB connection, React state
 
 ## Resources
+
 - https://react-bootstrap.netlify.app/docs/components/navs/
 - https://react-bootstrap.netlify.app/docs/components/carousel/
 - https://react-bootstrap.netlify.app/docs/forms/form-control
@@ -48,10 +50,11 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 - https://react-bootstrap.netlify.app/docs/forms/checks-radios
 - https://www.codevertiser.com/quiz-app-using-reactjs/
 - https://react-chartjs-2.js.org/examples/doughnut-chart
-
+- https://www.educative.io/answers/how-to-use-radio-buttons-in-react-js -https://www.w3schools.com/js/js_window_location.asp
 
 ## Development Goals
-1. 
+
+1.
 
 ## Links
 
@@ -60,6 +63,7 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 ## Preview
 
 ### EX1
+
 N/A
 
 ## License
