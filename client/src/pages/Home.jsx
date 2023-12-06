@@ -1,6 +1,7 @@
 import Carousel from "react-bootstrap/Carousel";
 import carouselText from "components/carouselText";
 import React from "react";
+
 import {
   StyleSheet,
   Button,
@@ -9,7 +10,9 @@ import {
   Text,
   Alert,
 } from "react-native";
+
 import Navbar from "../components/Navbar";
+
 
 const Home = () => {
   return (
@@ -76,4 +79,5 @@ const styles = StyleSheet.create({
     marginVertical: "2px",
   },
 });
+
 export default Home;
