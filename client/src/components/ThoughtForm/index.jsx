@@ -33,13 +33,13 @@ const ThoughtForm = ({ thoughtId }) => {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <div>
-          <textarea></textarea>
+          <textarea onChange={handleChange}></textarea>
         </div>
 
         <div>
-          <button></button>
+          <button type="submit">Add Thought</button>
         </div>
       </form>
     </>
