@@ -18,6 +18,7 @@ const typeDefs = `
     stress: Int
     therapy: Int
     outside: Int
+    avgValue: Float
   }
 
   type Thought {
@@ -41,13 +42,18 @@ const typeDefs = `
     me: User
   }
 
+  type SurveyResponse {
+    survey: Survey
+    avgValue: Float
+  }
+
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addThought(thoughtText: String!): Thought
     removeThought(thoughtId: ID!): Thought
     updateThought(thoughtId: ID!, thoughtText: String!): Thought
-    userSurveyResponse( sleep_quality: Int, headaches: Int, performance: Int, workload: Int, hobbies: Int, stress: Int, therapy: Int, outside: Int): Survey
+    userSurveyResponse( sleep_quality: Int, headaches: Int, performance: Int, workload: Int, hobbies: Int, stress: Int, therapy: Int, outside: Int): SurveyResponse
   }
 `;
 
