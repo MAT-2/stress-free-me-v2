@@ -84,6 +84,13 @@ function SurveyQuestions() {
       setActiveQuestion((prev) => prev + 1);
       //TODO: Need store response using State, so when time comes, all info is passed into mutation to put data into database.
       //Create an object with State to record all responses. Within the state, create an object to send backend.
+
+      setResults({
+        ...results,
+        value: {
+          ...results.target.value,
+        },
+      });
     }
   };
 
@@ -167,14 +174,6 @@ function SurveyQuestions() {
         >
           Next Question
         </Button>
-        {/* <Button
-          variant="secondary"
-          size="lg"
-          id="nextButton"
-          onClick={previousQuestion}
-        >
-          Previous Question
-        </Button> */}
       </Card>
     </div>
   );
