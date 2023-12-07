@@ -32,16 +32,23 @@ export const options = {
       text: 'Stress Journey',
     },
   },
+  scales: {
+    y: {
+      min: 0,
+      max: 10,
+    }
+  }
 };
 
-const labels = [];
+const labels = ['Date 1', 'Date 2', 'Date 3', 'Date 4', 'Date 5', 'Date 6', 'Date 7', 'Date 8', 'Date 9'];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Survey Results',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
+      label: 'Survey Results by Date',
+      // data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
+      data: [4.5, 6.4, 7.5, 8, 7, 9.2, 5.6, 4.3, 6],
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
