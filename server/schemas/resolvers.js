@@ -146,7 +146,20 @@ const resolvers = {
           { new: true }
         );
 
-        return survey;
+    const chosenValue = 
+      [sleep_quality,
+      headaches,
+      performance,
+      workload,
+      hobbies,
+      stress,
+      therapy,
+      outside,
+    ];
+    const totalValue = chosenValue.reduce((sum, score) => sum + score, 0);
+    const avgValue = totalValue/ chosenValue.length;
+
+    return { avgValue, survey }
       }
       throw AuthenticationError;
     },

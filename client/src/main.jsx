@@ -12,8 +12,6 @@ import Survey from "./pages/Survey.jsx";
 
 import ErrorPage from "./pages/ErrorPage";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 const router = createBrowserRouter([
   {
     path: "/",
