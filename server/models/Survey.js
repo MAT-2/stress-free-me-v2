@@ -41,7 +41,38 @@ const surveySchema = new Schema({
         enum: [1,2,3,4,5],
         required: true
       },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+        // get: (timestamp) => dateFormat(timestamp),
+        get: function (time) {
+          return time.toLocaleString();
+        },
+      },
+    },
+    {
+      toJSON: {
+        virtuals: true,
+        getters: true
+      },
 });
+
+surveySchema.virtual("avgValue").get(function () {
+  const chosenValue = 
+  [this.sleep_quality,
+  this.headaches,
+  this.performance,
+  this.workload,
+  this.hobbies,
+  this.stress,
+  this.therapy,
+  this.outside,
+];
+  const totalValue = chosenValue.reduce((sum, score) => sum + score, 0);
+  const avgValue = totalValue/ chosenValue.length;
+
+  return avgValue;
+})
 const Survey = model('Survey', surveySchema);
 
 module.exports = Survey;
