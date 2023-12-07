@@ -4,6 +4,36 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Latest Survey Results',
+      font: {
+        size: 20,
+      },
+    },
+    // customCanvasBackgroundColor: {
+    //   color: 'rgba(197, 230, 232, 0.2)',
+    // }
+  },
+};
+
+// const chartAreaBackground = {
+//   id: 'chartAreaBackground',
+//   beforeDatasetDraw(chart, args, plugins) {
+//     const { ctx, chartArea: {top, bottom, left, right, width, height}} = chart;
+//     ctx.save();
+
+//     ctx.fillStyle = "rgba(130, 205, 209, 0.2)",
+//     ctx.fillRect(left, top, width, height);
+//   }
+// }
+
 export const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   datasets: [
@@ -32,5 +62,9 @@ export const data = {
 };
 
 export default function App() {
-  return <Doughnut data={data} />;
+  return <Doughnut 
+  options={options} 
+  data={data} 
+  // plugins={[chartAreaBackground]}
+  />;
 }
