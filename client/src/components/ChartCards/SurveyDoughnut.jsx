@@ -8,7 +8,7 @@ export const data = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   datasets: [
     {
-      label: 'Stress Value',
+      label: 'Stress Factor Value',
       data: [4, 1, 3, 5, 2, 3, 4, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
