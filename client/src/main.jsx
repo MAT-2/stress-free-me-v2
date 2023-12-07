@@ -6,8 +6,10 @@ import App from "./App";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
+
 // import Results from "./pages/Results.jsx";
 import Survey from "./pages/Survey.jsx";
+
 import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
