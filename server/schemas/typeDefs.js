@@ -33,6 +33,11 @@ const typeDefs = `
     user: User
   }
 
+  type SurveyResponse {
+    survey: Survey
+    avgValue: Float
+  }
+  
   type Query {
     users: [User]
     user(username: String!): User
@@ -42,10 +47,6 @@ const typeDefs = `
     me: User
   }
 
-  type SurveyResponse {
-    survey: Survey
-    avgValue: Float
-  }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
