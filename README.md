@@ -37,6 +37,7 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 ## References
 
 1. Ian Darland - Class TA, helped with various tasks, to include server/DB connection, React state
+2. UT Austin Coding Bootcamp: Module 21 MERN
 
 ## Resources
 
