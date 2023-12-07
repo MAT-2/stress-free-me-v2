@@ -38,23 +38,23 @@ const Profile = () => {
   return (
     <div>
       <div className="flex-row justify-center mb-3">
-        <h2 className="col-12 bg-dark text-light p-3 mb-5">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+        <h2 className="bg-dark text-light text-center p-3 mb-4 mt-4">
+          Welcome to {userParam ? `${user.username}'s` : 'your'} stress management profile!
         </h2>
 
-        <div className="">
+        <div className="text-center">
             <button className="btn btn-block btn-primary " style={{ cursor: 'pointer' }} type="submit">
-                Start Survey
+                Start Survey!
             </button>
         </div>
 
         <div className="d-flex col-12 mb-5">
-          <Card className="col-6 m-4 p-3">
-            <p>Survey Doughnut Appears Here</p>
+          <Card className="col-6 col mt-4 mb-5 me-3 p-3">
+            {/* <p>Survey Doughnut Appears Here</p> */}
             <SurveyDoughnut />
           </Card>
-          <Card className="col-6 m-4 p-3">
-            <p>Stress Journey Appears Here</p>
+          <Card className="col-6 mt-4 mb-5 p-3">
+            {/* <p>Stress Journey Appears Here</p> */}
             <StressJourney />
           </Card>
         </div>

@@ -23,6 +23,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: 'top',
@@ -30,23 +31,39 @@ export const options = {
     title: {
       display: true,
       text: 'Stress Journey',
+      font: {
+        size: 20,
+      },
     },
   },
   scales: {
     y: {
       min: 0,
       max: 10,
+      ticks: {
+        stepSize: 1,
+      }
     }
-  }
+  },
 };
 
-const labels = ['Date 1', 'Date 2', 'Date 3', 'Date 4', 'Date 5', 'Date 6', 'Date 7', 'Date 8', 'Date 9'];
+const labels = [
+  'Date 1', 
+  'Date 2', 
+  'Date 3', 
+  'Date 4', 
+  'Date 5', 
+  'Date 6', 
+  'Date 7', 
+  'Date 8', 
+  'Date 9'
+];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Survey Results by Date',
+      label: 'Stress Level by Date',
       // data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
       data: [4.5, 6.4, 7.5, 8, 7, 9.2, 5.6, 4.3, 6],
       borderColor: 'rgb(255, 99, 132)',
@@ -56,5 +73,8 @@ export const data = {
 };
 
 export default function App() {
-  return <Line options={options} data={data} />;
+  return <Line 
+  options={options} 
+  data={data}
+  />;
 }
