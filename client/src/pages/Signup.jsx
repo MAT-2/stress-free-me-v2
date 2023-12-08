@@ -11,7 +11,7 @@ import Auth from '../utils/auth'
 // trying to push
 
 
-const Signup = () => {
+const Signup = (props) => {
     const [formState, setFormState] = useState({
         username: '',
         email: '',
@@ -48,12 +48,12 @@ const Signup = () => {
                 {data ? (
                     <p>
                     Success! You may now head{' '}
-                    <Link to="/">back to the homepage.</Link>
+                    <Link to="/Profile">back to the homepage.</Link>
                     </p>
                 ) : (
                     <Card.Body>
                         <Card.Title>Signup</Card.Title>
-                        <Form>
+                        <Form onSubmit={handleFormSubmit}>
                             <Form.Group as={Row} className="mb-3" controlId="emailForm">
                                 <Form.Label column sm="2">
                                     Email

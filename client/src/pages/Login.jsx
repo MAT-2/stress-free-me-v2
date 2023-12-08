@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth'
-import { redirect } from "react-router-dom"
+
 
 
 
@@ -33,11 +33,8 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-if (data) {
-  Auth.login(data.login.token)
-  return redirect ('/Profile')
-}
-      // Auth.login(data.login.token);
+
+      Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
@@ -54,7 +51,7 @@ if (data) {
         {data ? (
           <p>
           Success! You may now head{' '}
-          {/* <Link to="/Profile">to the profile page.</Link> */}
+          <Link to="/Profile">to the profile page.</Link>
         </p>
         ) :(
             <Card.Body>
