@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
@@ -11,7 +12,7 @@ import Auth from '../utils/auth'
 // trying to push
 
 
-const Signup = (props) => {
+const Signup = () => {
     const [formState, setFormState] = useState({
         username: '',
         email: '',

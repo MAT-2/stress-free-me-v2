@@ -76,7 +76,7 @@ const Navbar = () => {
           </Nav.Item>
           <Nav.Item className="text-light">
             <Nav.Link
-              href="/"
+              href="/Signup"
               className={homePage === "/Signup" ? "nav-link active" : "nav-link"}
               style={styles.text}
             >
