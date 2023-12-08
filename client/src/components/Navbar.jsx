@@ -23,6 +23,14 @@ function Navbar() {
           Login
         </Nav.Link>
       </Nav.Item>
+      <Nav.Item>
+        <Nav.Link
+          href="/Signup"
+          className={homePage === "/Signup" ? "nav-link active" : "nav-link"}
+        >
+          Signup
+        </Nav.Link>
+      </Nav.Item>
       <Nav.Item className="invisible">
         <Nav.Link
           href="/Login"
