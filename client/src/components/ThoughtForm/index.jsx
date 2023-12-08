@@ -6,7 +6,7 @@ import { ADD_THOUGHT } from "../../utils/mutations";
 const ThoughtForm = ({ thoughtId }) => {
   const [thoughtText, setThoughtText] = useState("");
 
-  const [addThought] = useMutation(ADD_THOUGHT);
+  const [addThought, { error }] = useMutation(ADD_THOUGHT);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -26,6 +26,7 @@ const ThoughtForm = ({ thoughtId }) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+
     if (name === "thoughtText") {
       setThoughtText(value);
     }
@@ -33,9 +34,18 @@ const ThoughtForm = ({ thoughtId }) => {
 
   return (
     <>
-      <form onSubmit={handleFormSubmit}>
-        <div>
-          <textarea onChange={handleChange}></textarea>
+      <form
+        onSubmit={handleFormSubmit}
+        className="flex-row justify-center justify-space-between-md align-center"
+      >
+        <div className="col-12">
+          <textarea
+            name="thoughtText"
+            placeholder="Type your thoughts here!"
+            value={thoughtText}
+            className="form-input w-100"
+            onChange={handleChange}
+          ></textarea>
         </div>
 
         <div>

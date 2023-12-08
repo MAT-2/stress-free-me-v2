@@ -25,16 +25,16 @@ function Results() {
   return (
     <>
       <div className="m-5 d-flex justify-content-center">
-        <div className="card " style={styles.card}>
+        <div className="card shadow-lg" style={styles.card}>
           <div className="card-body">
             <h1>How are you feeling today? Log your thoughts to keep track.</h1>
             <blockquote>{thought.thoughtText}</blockquote>
           </div>
-          <div>
-            <ThoughtList />
+          <div className="m-3 p-2 border border-dark align-content-center">
+            <ThoughtForm />
           </div>
           <div>
-            <ThoughtForm />
+            <ThoughtList />
           </div>
         </div>
       </div>
