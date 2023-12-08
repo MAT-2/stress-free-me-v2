@@ -7,6 +7,9 @@ import ThoughtForm from "../components/ThoughtForm";
 import { QUERY_SINGLE_THOUGHT } from "../utils/queries";
 
 const styles = {
+  body: {
+    margin: "5px",
+  },
   card: {
     width: "50rem",
     padding: 20,
@@ -24,17 +27,21 @@ function Results() {
 
   return (
     <>
-      <div className="m-5 d-flex justify-content-center">
-        <div className="card " style={styles.card}>
-          <div className="card-body">
-            <h1>How are you feeling today? Log your thoughts to keep track.</h1>
-            <blockquote>{thought.thoughtText}</blockquote>
-          </div>
-          <div>
-            <ThoughtList />
-          </div>
-          <div>
-            <ThoughtForm />
+      <div style={styles.body}>
+        <div className="m-5 d-flex justify-content-center">
+          <div className="card shadow-lg" style={styles.card}>
+            <div className="card-body">
+              <h1>
+                How are you feeling today? Log your thoughts to keep track.
+              </h1>
+              <blockquote>{thought.thoughtText}</blockquote>
+            </div>
+            <div className="m-3 p-2 border border-dark align-content-center">
+              <ThoughtForm />
+            </div>
+            <div>
+              <ThoughtList />
+            </div>
           </div>
         </div>
       </div>

@@ -53,6 +53,12 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 - https://react-chartjs-2.js.org/examples/doughnut-chart
 - https://www.educative.io/answers/how-to-use-radio-buttons-in-react-js -https://www.w3schools.com/js/js_window_location.asp
 - https://react.dev/learn/updating-objects-in-state#updating-a-nested-object
+- https://getbootstrap.com/docs/5.0/utilities/colors/
+- https://getbootstrap.com/docs/5.0/components/navbar/
+- https://getbootstrap.com/docs/5.0/components/navs-tabs/
+- https://getbootstrap.com/docs/5.0/utilities/display/
+- https://getbootstrap.com/docs/5.0/utilities/shadows/
+- https://cssgradient.io/
 
 ## Development Goals
 
