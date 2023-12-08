@@ -90,7 +90,7 @@ if (data) {
         
       </Card>
 
-      <Card style={{ width: "25rem" }}>
+      {/* <Card style={{ width: "25rem" }}>
         <Card.Body>
           <Card.Title>Signup</Card.Title>
           <Form>
@@ -115,9 +115,11 @@ if (data) {
             </Button>
           </Form>
         </Card.Body>
-      </Card>
+      </Card> */}
     </div>
   );
 }
 
+
 export default Login;
+
