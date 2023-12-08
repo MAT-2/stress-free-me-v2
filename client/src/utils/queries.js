@@ -51,16 +51,45 @@ query Query($surveyId: ID!) {
   
 export const QUERY_ME = gql`
     query me {
-        me {
-            _id
-            username
-            email
-            thoughts {
-                _id
-                thoughtText
-                thoughtAuthor
-                createdAt
-            }
+      me {
+        _id
+        email
+        thoughts {
+          _id
+          createdAt
+          thoughtAuthor
+          thoughtText
         }
+        surveys {
+          _id
+          avgValue
+          headaches
+          hobbies
+          outside
+          performance
+          sleep_quality
+          stress
+          therapy
+          workload
+        }
+        username
+      }
     }
 `;
+
+// export const QUERY_USER_SURVEYS = gql`
+//     query me {
+//       surveys {
+//         _id
+//         avgValue
+//         headaches
+//         hobbies
+//         outside
+//         performance
+//         sleep_quality
+//         stress
+//         therapy
+//         workload
+//       }
+//     }
+// `

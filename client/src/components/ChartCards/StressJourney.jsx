@@ -64,7 +64,6 @@ export const data = {
   datasets: [
     {
       label: 'Stress Level by Date',
-      // data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
       data: [4.5, 6.4, 7.5, 8, 7, 9.2, 5.6, 4.3, 6],
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
@@ -77,4 +76,4 @@ export default function App() {
   options={options} 
   data={data}
   />;
-}
+};
