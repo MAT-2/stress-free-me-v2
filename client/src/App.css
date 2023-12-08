@@ -1,3 +1,12 @@
 html {
   height: 100%;
 }
+
+body {
+  background: rgb(249, 249, 249);
+  background: radial-gradient(
+    circle,
+    rgba(249, 249, 249, 1) 0%,
+    rgba(200, 222, 247, 1) 100%
+  );
+}

@@ -58,6 +58,7 @@ Take our free quiz that analyzes a number of factors influencing your stress lev
 - https://getbootstrap.com/docs/5.0/components/navs-tabs/
 - https://getbootstrap.com/docs/5.0/utilities/display/
 - https://getbootstrap.com/docs/5.0/utilities/shadows/
+- https://cssgradient.io/
 
 ## Development Goals
 
