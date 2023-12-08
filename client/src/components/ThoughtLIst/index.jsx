@@ -11,7 +11,8 @@ const ThoughtList = ({ thoughts = [] }) => {
           thoughts.map((thought) => (
             <div key={thought._id}>
               <div>
-                <h5>Thoughts from user{""}</h5>
+                <h5>Created on {thought.createdAt}</h5>
+                <h5>{thought.thoughtText}</h5>
               </div>
             </div>
           ))}
