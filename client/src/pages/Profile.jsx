@@ -1,6 +1,7 @@
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Card from "react-bootstrap/Card";
+import { Link } from 'react-router-dom';
 
 import StressJourney from '../components/ChartCards/StressJourney';
 import SurveyDoughnut from '../components/ChartCards/SurveyDoughnut';
@@ -12,28 +13,28 @@ import Auth from '../utils/auth';
 const Profile = () => {
   const { username: userParam } = useParams();
 
-  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-  //   variables: { username: userParam },
-  // });
+  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    variables: { username: userParam },
+  });
 
-  // const user = data?.me || data?.user || {};
-  // // navigate to personal profile page if username is matched
-  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-  //   return <Navigate to="/profile/:username" />;
-  // }
+  const user = data?.me || data?.user || {};
+  // navigate to personal profile page if username is matched
+  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    return <Navigate to="/profile/:username" />;
+  }
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-  // if (!user?.username) {
-  //   return (
-  //     <h4>
-  //       You need to be logged in to view your profile and survey results. Use the navigation links above to
-  //       sign up or log in!
-  //     </h4>
-  //   );
-  // }
+  if (!user?.username) {
+    return (
+      <h4>
+        You need to be logged in to view your profile and survey results. Use the navigation links above to
+        sign up or log in!
+      </h4>
+    );
+  }
 
   return (
     <div>
@@ -43,9 +44,11 @@ const Profile = () => {
         </h2>
 
         <div className="text-center">
+        <Link to="/Survey">
             <button className="btn btn-block btn-primary " style={{ cursor: 'pointer' }} type="submit">
                 Start Survey!
             </button>
+            </Link>
         </div>
 
         <div className="d-flex col-12 mb-5">

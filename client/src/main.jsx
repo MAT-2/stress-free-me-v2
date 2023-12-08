@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup"
 
-// import Results from "./pages/Results.jsx";
+import Results from "./pages/Results.jsx";
 import Survey from "./pages/Survey.jsx";
 
 import ErrorPage from "./pages/ErrorPage";
@@ -36,10 +36,10 @@ const router = createBrowserRouter([
         path: "/Profile",
         element: <Profile />,
       },
-      // {
-      //   path: "/Results",
-      //   element: <Results />,
-      // },
+      {
+        path: "/Results",
+        element: <Results />,
+      },
       {
         path: "/Survey",
         element: <Survey />,

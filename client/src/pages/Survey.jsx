@@ -3,6 +3,9 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { USER_RESPONSE } from "../utils/mutations";
+
 
 //Use state to cycle through the questions.
 //Only things changing would be question names, and the next cycled question. Form is the same.
@@ -107,73 +110,75 @@ function SurveyQuestions() {
   //};
 
   return (
-    <div>
-      <Card style={{ width: "45rem", padding: "10px" }}>
-        <h2>{questions[activeQuestion].question}</h2>
-        <Form onSubmit={formSubmit}>
-          {["radio"].map((type) => (
-            <div key={`inline-${type}`} className="mb-3">
-              <Form.Check
-                inline
-                label="1"
-                name="group1"
-                type={type}
-                id={`inline-${type}-1`}
-                value="1"
-                checked={selectedOption === "1"}
-                onChange={onValueChange}
-              />
-              <Form.Check
-                inline
-                label="2"
-                name="group1"
-                type={type}
-                id={`inline-${type}-2`}
-                value="2"
-                checked={selectedOption === "2"}
-                onChange={onValueChange}
-              />
-              <Form.Check
-                inline
-                label="3"
-                name="group1"
-                type={type}
-                id={`inline-${type}-3`}
-                value="3"
-                checked={selectedOption === "3"}
-                onChange={onValueChange}
-              />
-              <Form.Check
-                inline
-                label="4"
-                name="group1"
-                type={type}
-                id={`inline-${type}-4`}
-                value="4"
-                checked={selectedOption === "4"}
-                onChange={onValueChange}
-              />
-              <Form.Check
-                inline
-                label="5"
-                name="group1"
-                type={type}
-                id={`inline-${type}-5`}
-                value="5"
-                checked={selectedOption === "5"}
-                onChange={onValueChange}
-              />
-            </div>
-          ))}
-        </Form>
-        <Button
-          variant="secondary"
-          size="lg"
-          id="nextButton"
-          onClick={nextQuestion}
-        >
-          Next Question
-        </Button>
+    <div className="m-5 d-flex justify-content-center">
+      <Card style={{ width: "45rem", height: "20rem", padding: "10px" }}>
+        <div className=" p-5 row justify-content-center">
+          <h2>{questions[activeQuestion].question}</h2>
+          <Form onSubmit={formSubmit}>
+            {["radio"].map((type) => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check
+                  inline
+                  label="1"
+                  name="group1"
+                  type={type}
+                  id={`inline-${type}-1`}
+                  value="1"
+                  checked={selectedOption === "1"}
+                  onChange={onValueChange}
+                />
+                <Form.Check
+                  inline
+                  label="2"
+                  name="group1"
+                  type={type}
+                  id={`inline-${type}-2`}
+                  value="2"
+                  checked={selectedOption === "2"}
+                  onChange={onValueChange}
+                />
+                <Form.Check
+                  inline
+                  label="3"
+                  name="group1"
+                  type={type}
+                  id={`inline-${type}-3`}
+                  value="3"
+                  checked={selectedOption === "3"}
+                  onChange={onValueChange}
+                />
+                <Form.Check
+                  inline
+                  label="4"
+                  name="group1"
+                  type={type}
+                  id={`inline-${type}-4`}
+                  value="4"
+                  checked={selectedOption === "4"}
+                  onChange={onValueChange}
+                />
+                <Form.Check
+                  inline
+                  label="5"
+                  name="group1"
+                  type={type}
+                  id={`inline-${type}-5`}
+                  value="5"
+                  checked={selectedOption === "5"}
+                  onChange={onValueChange}
+                />
+              </div>
+            ))}
+          </Form>
+          <Button
+            variant="secondary"
+            size="lg"
+            id="nextButton"
+            onClick={nextQuestion}
+          >
+            Next Question
+          </Button>
+        </div>
       </Card>
     </div>
   );
