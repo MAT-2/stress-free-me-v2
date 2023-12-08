@@ -2,8 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 // import carouselImage from '../components/carouselImage'
 import Button from 'react-bootstrap/Button';
 // import React from 'react';
-
-
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 return (
@@ -67,9 +66,11 @@ return (
     </Carousel>
     
         <div className="text-center">
+             <Link to="/Login">
             <Button variant="danger" size="lg">
-                Start Quiz!
+                Login
             </Button>{" "}
+            </Link>
         </div>
     </>
     )
