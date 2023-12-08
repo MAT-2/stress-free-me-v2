@@ -74,11 +74,11 @@ const Login = (props) => {
                 Login
               </Button>
             </Form>
-            <div className="form-group mt-2">
+            {/* <div className="form-group mt-2">
               <p>
                 <a href="#">New User? Signup here!</a>
               </p>
-            </div>
+            </div> */}
           </Card.Body>
         )}
         

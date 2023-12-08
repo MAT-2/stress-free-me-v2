@@ -67,7 +67,7 @@ return (
     
         <div className="text-center">
              <Link to="/Login">
-            <Button variant="danger" size="lg">
+            <Button variant="info" size="lg" style={{ width: "18rem", margin: "2rem" }}>
                 Login
             </Button>{" "}
             </Link>
