@@ -4,7 +4,8 @@ import { useQuery } from "@apollo/client";
 import ThoughtList from "../components/ThoughtLIst";
 import ThoughtForm from "../components/ThoughtForm";
 
-import { QUERY_SINGLE_THOUGHT } from "../utils/queries";
+// Changed to QUERY_THOUGHTS and not QUERY_SINGLE_THOUGHTS, since we want all of the thought data.
+import { QUERY_THOUGHTS } from "../utils/queries";
 
 const styles = {
   body: {
@@ -19,11 +20,14 @@ const styles = {
 function Results() {
   const { thoughtId } = useParams();
 
-  const { data } = useQuery(QUERY_SINGLE_THOUGHT, {
+  // Had to change to QUERY_THOUGHTS
+  const { data } = useQuery(QUERY_THOUGHTS, {
     variables: { thoughtId: thoughtId },
   });
 
-  const thought = data?.thought || {};
+  //Console.log thought to see what data we have. also changed it to thoughts
+  const thought = data?.thoughts || {};
+  console.log(thought);
 
   return (
     <>
@@ -40,7 +44,8 @@ function Results() {
               <ThoughtForm />
             </div>
             <div>
-              <ThoughtList />
+              {/* Had to add thoughts={thought} to retrieve the thought data from ThoughtList */}
+              <ThoughtList thoughts={thought} />
             </div>
           </div>
         </div>
