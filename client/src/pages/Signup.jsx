@@ -3,16 +3,15 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth'
-// trying to push
 
 
-const Signup = () => {
+
+const Signup = (props) => {
     const [formState, setFormState] = useState({
         username: '',
         email: '',
@@ -55,6 +54,14 @@ const Signup = () => {
                     <Card.Body>
                         <Card.Title>Signup</Card.Title>
                         <Form onSubmit={handleFormSubmit}>
+                        <Form.Group as={Row} className="mb-3" controlId="usernameForm">
+                                <Form.Label column sm="2">
+                                    Username
+                                </Form.Label>
+                                <Col sm="10">
+                                    <Form.Control type="text" placeholder="Username" name="username" value={formState.username} onChange={handleChange}/>
+                                </Col>
+                            </Form.Group>
                             <Form.Group as={Row} className="mb-3" controlId="emailForm">
                                 <Form.Label column sm="3">
                                     Email
@@ -71,7 +78,7 @@ const Signup = () => {
                                     <Form.Control type="password" placeholder="Password" name="password" value={formState.password} onChange={handleChange} />
                                 </Col>
                             </Form.Group>
-                            <Button variant="secondary" size="lg">
+                            <Button variant="secondary" size="lg" type="submit">
                                 Signup
                             </Button>
                         </Form>

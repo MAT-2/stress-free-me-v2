@@ -23,6 +23,8 @@ const Profile = () => {
     return <Navigate to="/profile/:username" />;
   }
 
+  console.log(user);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -35,6 +37,8 @@ const Profile = () => {
       </h4>
     );
   }
+
+  // const { data } = useQuery(QUERY_ME)
 
   return (
     <div>
@@ -54,11 +58,13 @@ const Profile = () => {
         <div className="d-flex col-12 mb-5">
           <Card className="col-6 col mt-4 mb-5 me-3 p-3">
             {/* <p>Survey Doughnut Appears Here</p> */}
-            <SurveyDoughnut />
+            <SurveyDoughnut surveyData={user.surveys[0]}
+            />
           </Card>
           <Card className="col-6 mt-4 mb-5 p-3">
             {/* <p>Stress Journey Appears Here</p> */}
-            <StressJourney />
+            <StressJourney surveyData={user.surveys}
+            />
           </Card>
         </div>
 
@@ -69,3 +75,6 @@ const Profile = () => {
 };
 
 export default Profile;
+
+// query me @ profile page
+// query correct info for chart results

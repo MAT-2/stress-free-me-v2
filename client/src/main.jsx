@@ -6,7 +6,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import Signup from "./pages/Signup.jsx"
+import Signup from "./pages/Signup"
 import Results from "./pages/Results.jsx";
 import Survey from "./pages/Survey.jsx";
 import ErrorPage from "./pages/ErrorPage";
