@@ -68,6 +68,7 @@ function SurveyQuestions() {
   }
 
   function formSubmit(event) {
+    console.log(event);
     event.preventDefault();
   }
 
@@ -79,7 +80,9 @@ function SurveyQuestions() {
     }));
     //TODO: create an if statement to cycle through the array for each question. If it is at end of array, the button
     //will lead to another page for the results.
-    if (activeQuestion === survey.length - 1) {
+    console.log(questions);
+    if (activeQuestion === survey.questions.length - 1) {
+      //the API call at line 84
       //TODO: Insert location.replace or location.assign to go to results page once questions are cycled through completely.
       window.location.assign("/Results");
     } else {
@@ -87,17 +90,16 @@ function SurveyQuestions() {
       //TODO: Need store response using State, so when time comes, all info is passed into mutation to put data into database.
       //Create an object with State to record all responses. Within the state, create an object to send backend.
 
-      setResults({
-        ...results,
-        value: {
-          ...results.target.value,
-        },
-      });
+      // setResults({
+      //   ...results,
+      //   value: {
+      //     ...results.target.value,
+      //   },
+      // });
     }
   };
   console.log(results);
   console.log(results.value);
-
   //Creating a click event to go to previous question.
 
   // const previousQuestion = () => {
