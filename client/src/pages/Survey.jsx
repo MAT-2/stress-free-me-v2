@@ -95,6 +95,8 @@ function SurveyQuestions() {
       });
     }
   };
+  console.log(results);
+  console.log(results.value);
 
   //Creating a click event to go to previous question.
 
