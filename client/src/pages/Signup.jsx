@@ -44,11 +44,11 @@ const Signup = (props) => {
 
     return (
         <div>
-            <Card style={{ width: "25rem" }}>
+            <Card style={{ width: "25rem", margin: "4rem" }}>
                 {data ? (
-                    <p>
-                    Success! You may now head{' '}
-                    <Link to="/Profile">back to the homepage.</Link>
+                      <p>
+                      Success! You may now head{' '}
+                      <Link to="/Profile">to the profile page.</Link>
                     </p>
                 ) : (
                     <Card.Body>
@@ -63,18 +63,18 @@ const Signup = (props) => {
                                 </Col>
                             </Form.Group>
                             <Form.Group as={Row} className="mb-3" controlId="emailForm">
-                                <Form.Label column sm="2">
+                                <Form.Label column sm="3">
                                     Email
                                 </Form.Label>
-                                <Col sm="10">
+                                <Col sm="7">
                                     <Form.Control type="email" placeholder="hello123@example.com" name="email" value={formState.email} onChange={handleChange}/>
                                 </Col>
                             </Form.Group>
                             <Form.Group as={Row} className="mb-3" controlId="passwordForm">
-                                <Form.Label column sm="2">
+                                <Form.Label column sm="3">
                                     Password
                                 </Form.Label>
-                                <Col sm="10">
+                                <Col sm="7">
                                     <Form.Control type="password" placeholder="Password" name="password" value={formState.password} onChange={handleChange} />
                                 </Col>
                             </Form.Group>
