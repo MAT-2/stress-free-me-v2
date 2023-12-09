@@ -46,6 +46,15 @@ export const SURVEY = gql `
 query Query($surveyId: ID!) {
     survey(surveyId: $surveyId) {
       _id
+      avgValue
+      headaches
+      hobbies
+      outside
+      performance
+      sleep_quality
+      stress
+      therapy
+      workload
     }
   }`;
   
@@ -77,19 +86,3 @@ export const QUERY_ME = gql`
     }
 `;
 
-// export const QUERY_USER_SURVEYS = gql`
-//     query me {
-//       surveys {
-//         _id
-//         avgValue
-//         headaches
-//         hobbies
-//         outside
-//         performance
-//         sleep_quality
-//         stress
-//         therapy
-//         workload
-//       }
-//     }
-// `
