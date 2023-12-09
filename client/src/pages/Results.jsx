@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+//If we want to display avgValue of the user responses then we will need to use useQuery.
 
 import ThoughtList from "../components/ThoughtLIst";
 import ThoughtForm from "../components/ThoughtForm";
 
 // Changed to QUERY_THOUGHTS and not QUERY_SINGLE_THOUGHTS, since we want all of the thought data.
 import { QUERY_THOUGHTS } from "../utils/queries";
-
+import { SURVEY } from "../utils/queries" //We need this to show the avgValue score on the result page.
+//Make sure that you target the avgValue on survey query.
 const styles = {
   body: {
     margin: "5px",
@@ -19,6 +21,7 @@ const styles = {
 
 function Results() {
   const { thoughtId } = useParams();
+
 
   // Had to change to QUERY_THOUGHTS
   const { data } = useQuery(QUERY_THOUGHTS, {

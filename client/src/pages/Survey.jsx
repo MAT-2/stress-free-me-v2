@@ -2,7 +2,8 @@
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import AuthService from "../utils/auth";
+import { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { USER_RESPONSE } from "../utils/mutations";
 
@@ -68,7 +69,7 @@ function SurveyQuestions() {
   }
 
   function formSubmit(event) {
-    console.log(event)
+    console.log(event);
     event.preventDefault();
   }
 
@@ -80,12 +81,13 @@ function SurveyQuestions() {
     }));
     //TODO: create an if statement to cycle through the array for each question. If it is at end of array, the button
     //will lead to another page for the results.
-    console.log(questions)
-    if (activeQuestion === survey.questions.length - 1) { //the API call at line 84
+    console.log(questions);
+    if (activeQuestion === survey.questions.length - 1) {
+      // await storeData();
       //TODO: Insert location.replace or location.assign to go to results page once questions are cycled through completely.
-      window.location.assign("/Results");
+      setActiveQuestion(activeQuestion + 1);
     } else {
-      setActiveQuestion((prev) => prev + 1);
+      setActiveQuestion(activeQuestion + 1);
       //TODO: Need store response using State, so when time comes, all info is passed into mutation to put data into database.
       //Create an object with State to record all responses. Within the state, create an object to send backend.
 
@@ -96,90 +98,148 @@ function SurveyQuestions() {
       //   },
       // });
     }
-  };
-  //Creating a click event to go to previous question.
+    // useEffect(async () => {
+    //   if (survey.questions.length === 8) {
+    //     await storeData();
+    //   }
+    // }, []);
+    //Creating a click event to go to previous question.
 
-  // const previousQuestion = () => {
-  //   if (activeQuestion === survey.length + 1) {
-  //TODO: Insert location.replace to go to results page once questions are cycled through completely.
-  //   } else {
-  //     setActiveQuestion((prev) => prev - 1);
-  //TODO: populate question here, will need to have the saved responses using state.
-  //     onValueChange();
-  //   }
-  //};
+    // const previousQuestion = () => {
+    //   if (activeQuestion === survey.length + 1) {
+    //TODO: Insert location.replace to go to results page once questions are cycled through completely.
+    //   } else {
+    //     setActiveQuestion((prev) => prev - 1);
+    //TODO: populate question here, will need to have the saved responses using state.
+    //     onValueChange();
+    //   }
+    //};
+  };
+  useEffect(() => {
+    async function storeData() {
+      try {
+        const response = await fetch("/graphql", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: AuthService.getToken(),
+          },
+          body: JSON.stringify({
+            query: `
+              mutation Mutation($sleepQuality: Int, $headaches: Int, $performance: Int, $workload: Int, $hobbies: Int, $stress: Int, $therapy: Int, $outside: Int) {
+                userSurveyResponse(sleep_quality: $sleepQuality, headaches: $headaches, performance: $performance, workload: $workload, hobbies: $hobbies, stress: $stress, therapy: $therapy, outside: $outside) {
+                  avgValue
+                  survey {
+                    _id
+                  }
+                }
+              }`,
+            variables: {
+              sleepQuality: results.sleep_quality,
+              headaches: results.headaches,
+              performance: results.performance,
+              workload: results.workload,
+              hobbies: results.hobbies,
+              stress: results.stress,
+              therapy: results.therapy,
+              outside: results.outside,
+            },
+          }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData);
+      } catch (error) {
+        console.error(error);
+      }
+
+      console.log(results)
+    }
+
+    const checkQuizFinished = async () => {
+      if (activeQuestion === survey.questions.length) {
+        await storeData();
+        window.location.assign("/Results");
+      }
+    }
+
+    checkQuizFinished();
+
+  }, [results, activeQuestion]);
 
   return (
     <div className="m-5 d-flex justify-content-center">
-      <Card style={{ width: "45rem", height: "20rem", padding: "10px" }}>
-        <div className=" p-5 row justify-content-center">
-          <h2>{questions[activeQuestion].question}</h2>
-          <Form onSubmit={formSubmit}>
-            {["radio"].map((type) => (
-              <div key={`inline-${type}`} className="mb-3">
-                <Form.Check
-                  inline
-                  label="1"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-1`}
-                  value="1"
-                  checked={selectedOption === "1"}
-                  onChange={onValueChange}
-                />
-                <Form.Check
-                  inline
-                  label="2"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-2`}
-                  value="2"
-                  checked={selectedOption === "2"}
-                  onChange={onValueChange}
-                />
-                <Form.Check
-                  inline
-                  label="3"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-3`}
-                  value="3"
-                  checked={selectedOption === "3"}
-                  onChange={onValueChange}
-                />
-                <Form.Check
-                  inline
-                  label="4"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-4`}
-                  value="4"
-                  checked={selectedOption === "4"}
-                  onChange={onValueChange}
-                />
-                <Form.Check
-                  inline
-                  label="5"
-                  name="group1"
-                  type={type}
-                  id={`inline-${type}-5`}
-                  value="5"
-                  checked={selectedOption === "5"}
-                  onChange={onValueChange}
-                />
-              </div>
-            ))}
-          </Form>
-          <Button
-            variant="secondary"
-            size="lg"
-            id="nextButton"
-            onClick={nextQuestion}
-          >
-            Next Question
-          </Button>
-        </div>
-      </Card>
+      {activeQuestion === questions.length ? <div>Storing results...</div> :
+        <Card style={{ width: "45rem", height: "20rem", padding: "10px" }}>
+          <div className=" p-5 row justify-content-center">
+            <h2>{questions[activeQuestion].question}</h2>
+            <Form onSubmit={formSubmit}>
+              {["radio"].map((type) => (
+                <div key={`inline-${type}`} className="mb-3">
+                  <Form.Check
+                    inline
+                    label="1"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-1`}
+                    value="1"
+                    checked={selectedOption === "1"}
+                    onChange={onValueChange}
+                  />
+                  <Form.Check
+                    inline
+                    label="2"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-2`}
+                    value="2"
+                    checked={selectedOption === "2"}
+                    onChange={onValueChange}
+                  />
+                  <Form.Check
+                    inline
+                    label="3"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-3`}
+                    value="3"
+                    checked={selectedOption === "3"}
+                    onChange={onValueChange}
+                  />
+                  <Form.Check
+                    inline
+                    label="4"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-4`}
+                    value="4"
+                    checked={selectedOption === "4"}
+                    onChange={onValueChange}
+                  />
+                  <Form.Check
+                    inline
+                    label="5"
+                    name="group1"
+                    type={type}
+                    id={`inline-${type}-5`}
+                    value="5"
+                    checked={selectedOption === "5"}
+                    onChange={onValueChange}
+                  />
+                </div>
+              ))}
+            </Form>
+            <Button
+              variant="secondary"
+              size="lg"
+              id="nextButton"
+              onClick={nextQuestion}
+            >
+              Next Question
+            </Button>
+          </div>
+        </Card>
+      }
     </div>
   );
 }
