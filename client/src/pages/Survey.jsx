@@ -68,7 +68,7 @@ function SurveyQuestions() {
   }
 
   function formSubmit(event) {
-    console.log(event)
+    console.log(event);
     event.preventDefault();
   }
 
@@ -80,8 +80,9 @@ function SurveyQuestions() {
     }));
     //TODO: create an if statement to cycle through the array for each question. If it is at end of array, the button
     //will lead to another page for the results.
-    console.log(questions)
-    if (activeQuestion === survey.questions.length - 1) { //the API call at line 84
+    console.log(questions);
+    if (activeQuestion === survey.questions.length - 1) {
+      //the API call at line 84
       //TODO: Insert location.replace or location.assign to go to results page once questions are cycled through completely.
       window.location.assign("/Results");
     } else {
@@ -97,6 +98,8 @@ function SurveyQuestions() {
       // });
     }
   };
+  console.log(results);
+  console.log(results.value);
   //Creating a click event to go to previous question.
 
   // const previousQuestion = () => {

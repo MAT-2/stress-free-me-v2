@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 
 import ThoughtList from "../components/ThoughtLIst";
 import ThoughtForm from "../components/ThoughtForm";
+// import ThoughtDelete from "../components/ThoughtDelete";
 
 // Changed to QUERY_THOUGHTS and not QUERY_SINGLE_THOUGHTS, since we want all of the thought data.
 import { QUERY_THOUGHTS } from "../utils/queries";
@@ -46,6 +47,7 @@ function Results() {
             <div>
               {/* Had to add thoughts={thought} to retrieve the thought data from ThoughtList */}
               <ThoughtList thoughts={thought} />
+              {/* <ThoughtDelete /> */}
             </div>
           </div>
         </div>
