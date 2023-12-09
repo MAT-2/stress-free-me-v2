@@ -81,9 +81,8 @@ function SurveyQuestions() {
     }));
     //TODO: create an if statement to cycle through the array for each question. If it is at end of array, the button
     //will lead to another page for the results.
-    console.log(questions);
-    if (activeQuestion === survey.questions.length - 1) {
-      // await storeData();
+    console.log(questions)
+    if (activeQuestion === survey.questions.length - 1) { //the API call at line 84
       //TODO: Insert location.replace or location.assign to go to results page once questions are cycled through completely.
       setActiveQuestion(activeQuestion + 1);
     } else {
@@ -98,12 +97,8 @@ function SurveyQuestions() {
       //   },
       // });
     }
-    // useEffect(async () => {
-    //   if (survey.questions.length === 8) {
-    //     await storeData();
-    //   }
-    // }, []);
-    //Creating a click event to go to previous question.
+  };
+  //Creating a click event to go to previous question.
 
     // const previousQuestion = () => {
     //   if (activeQuestion === survey.length + 1) {
