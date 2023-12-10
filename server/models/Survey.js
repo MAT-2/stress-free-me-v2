@@ -45,7 +45,7 @@ const surveySchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      // get: (timestamp) => dateFormat(timestamp),
+      get: (timestamp) => dateFormat(timestamp),
       get: function (time) {
         return time.toLocaleString();
       },
@@ -70,7 +70,7 @@ surveySchema.virtual("avgValue").get(function () {
     this.therapy,
     this.outside,
     // TODO: There's an issue with adding this.createdAt into the model, which prevents accessing and updating the profile. We need to figure out how to add createdAt into the line chart in order for it to update properly. We also need an X and Y value as part of a line chart.
-    // this.createdAt,
+    // TODO: createdAt is being read, but cannot be used to add a totalValue since you cannot add a date.
   ];
   const totalValue = chosenValue.reduce((sum, score) => sum + score, 0);
   const avgValue = totalValue / chosenValue.length;

@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+// import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -59,8 +60,12 @@ const labels = [
   "Date 9",
 ];
 // I Moved the const data object into the export function.
-export default function SurveyJourney({ surveyData }) {
-  console.log(surveyData);
+// eslint-disable-next-line react/prop-types
+// TODO: We need to use 2 arrays for both the labels and the data. We need a loop that takes the avgValue of stress and add it to the array for data, and string split the date, and add it to the label. If order does not work, then go to backend of app and use .sort.
+// Use .sort at the backend surver for MongoDB first
+export default function SurveyJourney({ surveys }) {
+  console.log(surveys);
+  console.log(surveys[0].createdAt);
   const data = {
     labels,
     datasets: [
