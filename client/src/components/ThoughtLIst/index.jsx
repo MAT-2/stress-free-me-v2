@@ -1,11 +1,11 @@
 const ThoughtList = ({ thoughts = [] }) => {
   if (!thoughts.length) {
-    return <h1>There Are No Thoughts Existing</h1>;
+    return <h1>You don't have any thoughts just yet...</h1>;
   }
 
   return (
     <>
-      <h2>Thought List</h2>
+      <h2>Thought Journal</h2>
       <div>
         {thoughts &&
           thoughts.map((thought) => (

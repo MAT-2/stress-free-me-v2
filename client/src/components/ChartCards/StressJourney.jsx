@@ -40,7 +40,7 @@ export const options = {
   scales: {
     y: {
       min: 0,
-      max: 10,
+      max: 5,
       ticks: {
         stepSize: 1,
       },
@@ -49,15 +49,15 @@ export const options = {
 };
 
 const labels = [
-  "Date 1",
-  "Date 2",
-  "Date 3",
-  "Date 4",
-  "Date 5",
-  "Date 6",
-  "Date 7",
-  "Date 8",
-  "Date 9",
+  "12/2/2023",
+  "12/3/2023",
+  "12/4/2023",
+  "12/5/2023",
+  "12/6/2023",
+  "12/7/2023",
+  "12/8/2023",
+  "12/9/2023",
+  "12/10/2023",
 ];
 // I Moved the const data object into the export function.
 // eslint-disable-next-line react/prop-types
@@ -71,7 +71,7 @@ export default function SurveyJourney({ surveys }) {
     datasets: [
       {
         label: "Stress Level by Date",
-        data: [4.5, 6.4, 7.5, 8, 7, 9.2, 5.6, 4.3, 6],
+        data: [2.4, 2.6, 2.0, 1.5, 3.4, 3.7, 4.2, 3.9, 3.8],
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
