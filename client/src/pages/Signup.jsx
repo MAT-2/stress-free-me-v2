@@ -48,17 +48,17 @@ const Signup = (props) => {
                 {data ? (
                       <p>
                       Success! You may now head{' '}
-                      <Link to="/Profile">to the profile page.</Link>
+                      <Link to="/Survey">to the profile page.</Link>
                     </p>
                 ) : (
                     <Card.Body>
                         <Card.Title>Signup</Card.Title>
                         <Form onSubmit={handleFormSubmit}>
                         <Form.Group as={Row} className="mb-3" controlId="usernameForm">
-                                <Form.Label column sm="2">
+                                <Form.Label column sm="3">
                                     Username
                                 </Form.Label>
-                                <Col sm="10">
+                                <Col sm="7">
                                     <Form.Control type="text" placeholder="Username" name="username" value={formState.username} onChange={handleChange}/>
                                 </Col>
                             </Form.Group>
