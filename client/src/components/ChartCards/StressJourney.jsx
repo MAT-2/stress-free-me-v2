@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,8 +8,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
+} from "chart.js";
+import { Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -26,11 +26,11 @@ export const options = {
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: 'top',
+      position: "top",
     },
     title: {
       display: true,
-      text: 'Stress Journey',
+      text: "Stress Journey",
       font: {
         size: 20,
       },
@@ -42,38 +42,35 @@ export const options = {
       max: 10,
       ticks: {
         stepSize: 1,
-      }
-    }
+      },
+    },
   },
 };
 
 const labels = [
-  'Date 1', 
-  'Date 2', 
-  'Date 3', 
-  'Date 4', 
-  'Date 5', 
-  'Date 6', 
-  'Date 7', 
-  'Date 8', 
-  'Date 9'
+  "Date 1",
+  "Date 2",
+  "Date 3",
+  "Date 4",
+  "Date 5",
+  "Date 6",
+  "Date 7",
+  "Date 8",
+  "Date 9",
 ];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Stress Level by Date',
-      data: [4.5, 6.4, 7.5, 8, 7, 9.2, 5.6, 4.3, 6],
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-  ],
-};
-
-export default function App() {
-  return <Line 
-  options={options} 
-  data={data}
-  />;
-};
+// I Moved the const data object into the export function.
+export default function SurveyJourney({ surveyData }) {
+  console.log(surveyData);
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Stress Level by Date",
+        data: [4.5, 6.4, 7.5, 8, 7, 9.2, 5.6, 4.3, 6],
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  };
+  return <Line options={options} data={data} />;
+}
