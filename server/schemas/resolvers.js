@@ -24,10 +24,13 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       //=profile page
+      console.log(context.user);
       if (context.user) {
-        return User.findOne({ _id: context.user._id })
+        const foundUser = await User.findOne({ _id: context.user._id })
           .populate("thoughts")
           .populate("surveys");
+        console.log(foundUser);
+        return foundUser;
       }
       throw AuthenticationError;
     },

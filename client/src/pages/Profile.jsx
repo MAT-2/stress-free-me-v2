@@ -70,7 +70,7 @@ const Profile = () => {
           </Card>
           <Card className="col-6 mt-4 mb-5 p-3">
             {/* <p>Stress Journey Appears Here</p> */}
-            <StressJourney surveyData={user.surveys[user.surveys.length - 1]} />
+            <StressJourney surveys={user.surveys} />
           </Card>
         </div>
       </div>

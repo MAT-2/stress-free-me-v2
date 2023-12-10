@@ -1,7 +1,7 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
-query Query {
+  query Query {
     users {
       username
       email
@@ -10,17 +10,17 @@ query Query {
     }
   }
 `;
-export const QUERY_SINGLE_USER = gql `
-query Query($username: String!) {
+export const QUERY_SINGLE_USER = gql`
+  query Query($username: String!) {
     user(username: $username) {
       email
       password
       _id
     }
-  }`
+  }
+`;
 
-
-  export const QUERY_THOUGHTS = gql`
+export const QUERY_THOUGHTS = gql`
   query Query {
     thoughts {
       _id
@@ -32,7 +32,7 @@ query Query($username: String!) {
 `;
 
 export const QUERY_SINGLE_THOUGHT = gql`
-query Thought($thoughtId: ID!) {
+  query Thought($thoughtId: ID!) {
     thought(thoughtId: $thoughtId) {
       thoughtText
       thoughtAuthor
@@ -42,8 +42,8 @@ query Thought($thoughtId: ID!) {
   }
 `;
 
-export const SURVEY = gql `
-query Query($surveyId: ID!) {
+export const SURVEY = gql`
+  query Query($surveyId: ID!) {
     survey(surveyId: $surveyId) {
       _id
       avgValue
@@ -56,33 +56,34 @@ query Query($surveyId: ID!) {
       therapy
       workload
     }
-  }`;
-  
-export const QUERY_ME = gql`
-    query me {
-      me {
-        _id
-        email
-        thoughts {
-          _id
-          createdAt
-          thoughtAuthor
-          thoughtText
-        }
-        surveys {
-          _id
-          avgValue
-          headaches
-          hobbies
-          outside
-          performance
-          sleep_quality
-          stress
-          therapy
-          workload
-        }
-        username
-      }
-    }
+  }
 `;
 
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      email
+      thoughts {
+        _id
+        createdAt
+        thoughtAuthor
+        thoughtText
+      }
+      surveys {
+        _id
+        avgValue
+        headaches
+        hobbies
+        outside
+        performance
+        sleep_quality
+        stress
+        therapy
+        workload
+        createdAt
+      }
+      username
+    }
+  }
+`;

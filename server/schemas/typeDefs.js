@@ -19,6 +19,7 @@ const typeDefs = `
     therapy: Int
     outside: Int
     avgValue: Float
+    createdAt: String
   }
 
   type Thought {
