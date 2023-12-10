@@ -1,14 +1,14 @@
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 import Card from "react-bootstrap/Card";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import StressJourney from '../components/ChartCards/StressJourney';
-import SurveyDoughnut from '../components/ChartCards/SurveyDoughnut';
+import StressJourney from "../components/ChartCards/StressJourney";
+import SurveyDoughnut from "../components/ChartCards/SurveyDoughnut";
 
-import { QUERY_USER, QUERY_ME } from '../utils/queries'
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -17,7 +17,7 @@ const Profile = () => {
     variables: { username: userParam },
   });
 
-  const user = data?.me || data?.user || {};
+  const user = data?.me || {};
   // navigate to personal profile page if username is matched
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile/:username" />;
@@ -32,8 +32,8 @@ const Profile = () => {
   if (!user?.username) {
     return (
       <h4>
-        You need to be logged in to view your profile and survey results. Use the navigation links above to
-        sign up or log in!
+        You need to be logged in to view your profile and survey results. Use
+        the navigation links above to sign up or log in!
       </h4>
     );
   }
@@ -44,32 +44,36 @@ const Profile = () => {
     <div>
       <div className="flex-row justify-center mb-3">
         <h2 className="bg-dark text-light text-center p-3 mb-4 mt-4">
-          Welcome to {userParam ? `${user.username}'s` : 'your'} stress management profile!
+          Welcome to {userParam ? `${user.username}'s` : "your"} stress
+          management profile!
         </h2>
 
         <div className="text-center">
-        <Link to="/Survey">
-            <button className="btn btn-block btn-primary " style={{ cursor: 'pointer' }} type="submit">
-                Start Survey!
+          <Link to="/Survey">
+            <button
+              className="btn btn-block btn-primary "
+              style={{ cursor: "pointer" }}
+              type="submit"
+            >
+              Start Survey!
             </button>
-            </Link>
+          </Link>
         </div>
 
         <div className="d-flex col-12 mb-5">
           <Card className="col-6 col mt-4 mb-5 me-3 p-3">
             {/* <p>Survey Doughnut Appears Here</p> */}
-            <SurveyDoughnut surveyData={user.surveys[0]}
+            {/* Changed user.surveys[0] to user.surveys[user.surveys.length-1] because [0] is always static. Using the newest statement updates to the latest data in the array. */}
+            <SurveyDoughnut
+              surveyData={user.surveys[user.surveys.length - 1]}
             />
           </Card>
           <Card className="col-6 mt-4 mb-5 p-3">
             {/* <p>Stress Journey Appears Here</p> */}
-            <StressJourney surveyData={user.surveys}
-            />
+            <StressJourney surveyData={user.surveys[user.surveys.length - 1]} />
           </Card>
         </div>
-
       </div>
-
     </div>
   );
 };

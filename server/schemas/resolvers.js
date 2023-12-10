@@ -20,12 +20,14 @@ const resolvers = {
       return Thought.findOne({ _id: thoughtId });
     },
     survey: async (parent, { surveyId }) => {
-      return Survey.findOne({ _id: surveyId }); 
-    }, 
+      return Survey.findOne({ _id: surveyId });
+    },
     me: async (parent, args, context) => {
       //=profile page
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("thoughts").populate("surveys");
+        return User.findOne({ _id: context.user._id })
+          .populate("thoughts")
+          .populate("surveys");
       }
       throw AuthenticationError;
     },
@@ -91,7 +93,7 @@ const resolvers = {
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $push: { thoughts: thought._id } },
-          { new: true, upsert: true  }
+          { new: true, upsert: true }
         );
 
         return thought;
@@ -130,7 +132,7 @@ const resolvers = {
     ) => {
       if (context.user) {
         const survey = await Survey.create({
-          sleep_quality, 
+          sleep_quality,
           headaches,
           performance,
           workload,
@@ -138,7 +140,7 @@ const resolvers = {
           stress,
           therapy,
           outside,
-      });
+        });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -146,20 +148,20 @@ const resolvers = {
           { new: true }
         );
 
-    const chosenValue = 
-      [sleep_quality,
-      headaches,
-      performance,
-      workload,
-      hobbies,
-      stress,
-      therapy,
-      outside,
-    ];
-    const totalValue = chosenValue.reduce((sum, score) => sum + score, 0);
-    const avgValue = totalValue/ chosenValue.length;
+        const chosenValue = [
+          sleep_quality,
+          headaches,
+          performance,
+          workload,
+          hobbies,
+          stress,
+          therapy,
+          outside,
+        ];
+        const totalValue = chosenValue.reduce((sum, score) => sum + score, 0);
+        const avgValue = totalValue / chosenValue.length;
 
-    return { avgValue, survey }
+        return { avgValue, survey };
       }
       throw AuthenticationError;
     },
@@ -167,4 +169,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-
