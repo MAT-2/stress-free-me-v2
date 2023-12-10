@@ -1,20 +1,20 @@
-// import { useState } from "react";
-// import Results from "../../pages/Results";
+import { useState } from "react";
+import Results from "../../pages/Results";
 
-// function ThoughtDelete() {
-//   const [thought, setThoughts] = useState([]);
+function ThoughtDelete() {
+  const [thought, setThoughts] = useState([]);
 
-//   const deleteThought = (id) => {
-//     const updateThought = [...thought].filter((item) => item.id !== id);
+  const deleteThought = (id) => {
+    const updateThought = [...thought].filter((item) => item.id !== id);
 
-//     setThoughts(updateThought);
-//   };
+    setThoughts(updateThought);
+  };
 
-//   return (
-//     <div>
-//       <Results deleteThought={deleteThought} />
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <Results deleteThought={deleteThought} />
+    </div>
+  );
+}
 
-// export default ThoughtDelete;
+export default ThoughtDelete;

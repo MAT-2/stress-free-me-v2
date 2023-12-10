@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 
 import ThoughtList from "../components/ThoughtLIst";
 import ThoughtForm from "../components/ThoughtForm";
-// import ThoughtDelete from "../components/ThoughtDelete";
+import ThoughtDelete from "../components/ThoughtDelete";
 
 // Changed to QUERY_THOUGHTS and not QUERY_SINGLE_THOUGHTS, since we want all of the thought data.
 import { QUERY_THOUGHTS } from "../utils/queries";
@@ -37,11 +37,10 @@ function Results() {
     <>
       <div style={styles.body}>
         <div className="m-5 d-flex justify-content-center">
-          <div className="card shadow-lg" style={styles.card}>
+          <div className="card shadow-lg mb-5" style={styles.card}>
             <div className="card-body">
-              <h1>
-                How are you feeling today? Log your thoughts to keep track.
-              </h1>
+              <h1 className="text-center">How are you feeling today?</h1>
+              <h1 className="text-center">Log your thoughts to keep track.</h1>
               <blockquote>{thought.thoughtText}</blockquote>
             </div>
             <div className="m-3 p-2 border border-dark align-content-center">
