@@ -9,7 +9,8 @@ const ThoughtForm = ({ thoughtId }) => {
   const [addThought, { error }] = useMutation(ADD_THOUGHT);
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
+    // removed preventDefault so that thoughtList will refresh after a new thought is added
 
     try {
       const { data } = await addThought({
@@ -49,7 +50,7 @@ const ThoughtForm = ({ thoughtId }) => {
         </div>
 
         <div>
-          <button type="submit">Add Thought</button>
+          <button className="btn btn-info" type="submit">Add Thought</button>
         </div>
       </form>
     </>

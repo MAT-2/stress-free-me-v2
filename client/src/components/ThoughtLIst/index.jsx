@@ -26,7 +26,7 @@ const ThoughtList = ({ thoughts = [] }) => {
   };
   return (
     <>
-      <h2>Thought List</h2>
+      <h2>Thought Journal</h2>
       <div>
         {mythoughts.map((thought) => (
           <div key={thought._id}>

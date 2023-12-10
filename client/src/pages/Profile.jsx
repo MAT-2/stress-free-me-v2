@@ -51,7 +51,7 @@ const Profile = () => {
         <div className="text-center">
           <Link to="/Survey">
             <button
-              className="btn btn-block btn-primary "
+              className="btn btn-block btn-primary"
               style={{ cursor: "pointer" }}
               type="submit"
             >
@@ -63,7 +63,6 @@ const Profile = () => {
         <div className="d-flex col-12 mb-5">
           <Card className="col-6 col mt-4 mb-5 me-3 p-3">
             {/* <p>Survey Doughnut Appears Here</p> */}
-            {/* Changed user.surveys[0] to user.surveys[user.surveys.length-1] because [0] is always static. Using the newest statement updates to the latest data in the array. */}
             <SurveyDoughnut
               surveyData={user.surveys[user.surveys.length - 1]}
             />
