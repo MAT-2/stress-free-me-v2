@@ -4,24 +4,21 @@ UTA Coding Bootcamp Final Project 3
 
 ## Description
 
-
 Embark on a transformative stress management journey with our cutting-edge Daily Stress Tracking App. Begin with our complimentary stress analysis quiz, meticulously designed to assess a myriad of factors impacting your stress levels. Delve into comprehensive results that illuminate key stress triggers, enabling you to make informed decisions for stress reduction and lifestyle enhancement. Elevate your well-being as you navigate this user-friendly interface, guiding you towards a harmonious and stress-free existence. 
-
-![Homepage](assets/home.png)
-![Login](assets/login.png)
-![Profile](assets/profile1.png)
-![Thoughts](assets/thoughts.png)
-![Survey](assets/survey.png)
-![Profile-Updated](assets/profile2.png)
 
 ## Table of Contents
 
-- [Technologies Used](#technologies-used)
-- [References](#references)
-- [Resources](#resources)
-- [Development Goals](#development-goals)
-- [Links](#links)
-- [License](#license)
+- [STRESS FREE ME (v2.0)](#stress-free-me-v20)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Technologies Used](#technologies-used)
+  - [References](#references)
+  - [Resources](#resources)
+  - [Development Goals](#development-goals)
+  - [Links](#links)
+    - [GitHub Repository](#github-repository)
+  - [Preview](#preview)
+  - [License](#license)
 
 
 

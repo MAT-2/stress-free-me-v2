@@ -34,7 +34,7 @@ const ThoughtList = ({ thoughts = [] }) => {
       const response = await updateThought({
         variables: { thoughtId: itemId, thoughtText: newThoughtText },
       });
-      // Extract the updated thought from the GraphQL response
+      // Grab the updated thought from the GraphQL response
       const updatedThought = response.data.updateThought;
       // Update local state
       const updatedThoughts = mythoughts.map((item) =>
