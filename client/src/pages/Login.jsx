@@ -73,15 +73,10 @@ const Login = (props) => {
                   <Form.Control placeholder="Password" type="password" name="password" value={formState.password} onChange={handleChange}/>
                 </Col>
               </Form.Group>
-              <Button  type="submit" variant="secondary" size="lg">
+              <Button  type="submit" variant="info" size="lg">
                 Login
               </Button>
             </Form>
-            {/* <div className="form-group mt-2">
-              <p>
-                <a href="#">New User? Signup here!</a>
-              </p>
-            </div> */}
           </Card.Body>
         )}
         
