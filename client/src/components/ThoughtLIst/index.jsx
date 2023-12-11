@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { REMOVE_THOUGHT, UPDATE_THOUGHT } from "../../utils/mutations";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 const ThoughtList = ({ thoughts = [] }) => {
   const [mythoughts, setMyThought] = useState(thoughts);
@@ -50,21 +52,33 @@ const ThoughtList = ({ thoughts = [] }) => {
       <div>
         {mythoughts.map((thought) => (
           <div key={thought._id}>
-            <div>
-              <h5>Created on {thought.createdAt}</h5>
-              <h5>{thought.thoughtText}</h5>
-              <button onClick={() => removeThought(thought._id)}>Delete</button>
-              <button
-                onClick={() =>
-                  editThought(
-                    thought._id,
-                    "I changed my mind about this thought"
-                  )
-                }
-              >
-                Update
-              </button>
-            </div>
+            <Card>
+              <Card.Header>Created on {thought.createdAt}</Card.Header>
+              <Card.Body>
+                <Card.Title className="text-center">
+                  {thought.thoughtText}
+                </Card.Title>
+                <Button
+                  variant="danger"
+                  size="sm"
+                  onClick={() => removeThought(thought._id)}
+                >
+                  Delete
+                </Button>
+                <Button
+                  variant="success"
+                  size="sm"
+                  onClick={() =>
+                    editThought(
+                      thought._id,
+                      "I changed my mind about this thought"
+                    )
+                  }
+                >
+                  Update
+                </Button>
+              </Card.Body>
+            </Card>
           </div>
         ))}
       </div>
