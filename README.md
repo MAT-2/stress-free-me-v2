@@ -1,32 +1,45 @@
 # STRESS FREE ME (v2.0)
-
 UTA Coding Bootcamp Final Project 3
 
 ## Description
-
-
 Embark on a transformative stress management journey with our cutting-edge Daily Stress Tracking App. Begin with our complimentary stress analysis quiz, meticulously designed to assess a myriad of factors impacting your stress levels. Delve into comprehensive results that illuminate key stress triggers, enabling you to make informed decisions for stress reduction and lifestyle enhancement. Elevate your well-being as you navigate this user-friendly interface, guiding you towards a harmonious and stress-free existence. 
 
-![Homepage](assets/home.png)
-![Login](assets/login.png)
-![Profile](assets/profile1.png)
-![Thoughts](assets/thoughts.png)
-![Survey](assets/survey.png)
-![Profile-Updated](assets/profile2.png)
-
 ## Table of Contents
-
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
 - [Technologies Used](#technologies-used)
 - [References](#references)
 - [Resources](#resources)
 - [Development Goals](#development-goals)
 - [Links](#links)
+- [Site Preview](#preview)
 - [License](#license)
 
+## User Story
+```
+AS A student or employee with many responsibilities, tasks, duties, homework, and ultimately STRESS
+I WANT to utilize an application that helps me manage the various stress inducing or relieving factors in my life
+SO THAT I can elevate my lifestyle, improve my daily habits, and enjoy life more holistically
+```
 
+## Acceptance Criteria
+```
+GIVEN a single-page application created wit React
+WHEN I open the app
+THEN I am presented with a homepage containing a navbar
+WHEN I view the navbar
+THEN I have the option to use links to sign up or log in
+WHEN I sign up or log in
+THEN I am directed to take a survey
+WHEN I complete the survey
+THEN I am directed to my profile page which displays two charts, one with my survey results and one charting my overall stress level through time
+WHEN I navigate to the results page
+THEN I can write my thoughts in a journal and have them catalogued by date
+WHEN I am finished analyzing my stress factors, data, and thought journal
+THEN I can log out using the button on the navbar and I am taken back to the homepage
+```
 
 ## Technologies Used
-
 1. HTML
 2. CSS
 3. Node.js
@@ -37,12 +50,10 @@ Embark on a transformative stress management journey with our cutting-edge Daily
 8. MongoDB / Mongoose
 
 ## References
-
 1. Ian Darland - Class TA, helped with various tasks, to include server/DB connection, React state
 2. UT Austin Coding Bootcamp: Module 21 MERN
 
 ## Resources
-
 - https://react-bootstrap.netlify.app/docs/components/navs/
 - https://react-bootstrap.netlify.app/docs/components/carousel/
 - https://react-bootstrap.netlify.app/docs/forms/form-control
@@ -63,22 +74,23 @@ Embark on a transformative stress management journey with our cutting-edge Daily
 - https://cssgradient.io/
 
 ## Development Goals
-
-1.
+1. Refining functionality of Profile and Results/Journal
+2. UX/UI improvements, card styling, button styling, colors, site color scheme
+3. Adding content to fill out Profile and Results
+4. Creating a community function within the app - mailing list, resources, forum
 
 ## Links
 
 ### <a href="https://github.com/MAT-2/stress-free-me-v2">GitHub Repository</a>
+### <a href="">Stress Free Me - Live Site</a>
 
 ## Preview
+![Homepage](assets/home.png)
+![Login](assets/login.png)
+![Profile-Updated](assets/profile2.png)
+![Thoughts](assets/thoughts.png)
+![Survey](assets/survey.png)
 
-![Alt text](image.png)
-![Alt text](image-1.png)
-![Alt text](image-2.png)
-![Alt text](image-3.png)
-![Alt text](image-4.png)
-![Alt text](image-5.png)
-![Alt text](image-6.png)
 
 ## License
 

@@ -4,7 +4,6 @@ import { useQuery } from "@apollo/client";
 
 import ThoughtList from "../components/ThoughtList";
 import ThoughtForm from "../components/ThoughtForm";
-
 // import ThoughtDelete from "../components/ThoughtDelete";
 
 // Changed to QUERY_THOUGHTS and not QUERY_SINGLE_THOUGHTS, since we want all of the thought data.
