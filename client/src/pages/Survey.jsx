@@ -231,7 +231,7 @@ function SurveyQuestions() {
               ))}
             </Form>
             <Button
-              variant="secondary"
+              variant="info"
               size="lg"
               id="nextButton"
               onClick={nextQuestion}

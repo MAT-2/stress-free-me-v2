@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-// require("dotenv").config();
-// process.env.DB_NAME 
+require("dotenv").config();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://root:root@cluster0.vw25nz0.mongodb.net/StressFreeMe' );
+mongoose.connect(process.env.MONGODB_URI || process.env.DB_NAME  );
 
 module.exports = mongoose.connection;

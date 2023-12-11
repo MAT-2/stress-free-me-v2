@@ -78,7 +78,7 @@ const Signup = (props) => {
                                     <Form.Control type="password" placeholder="Password" name="password" value={formState.password} onChange={handleChange} />
                                 </Col>
                             </Form.Group>
-                            <Button variant="secondary" size="lg" type="submit">
+                            <Button variant="info" size="lg" type="submit">
                                 Signup
                             </Button>
                         </Form>

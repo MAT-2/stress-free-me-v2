@@ -1,4 +1,3 @@
-// import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "react-bootstrap/Nav";
 import { useLocation } from "react-router-dom";
 import Auth from '../utils/auth';
