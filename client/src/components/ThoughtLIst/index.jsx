@@ -54,7 +54,16 @@ const ThoughtList = ({ thoughts = [] }) => {
               <h5>Created on {thought.createdAt}</h5>
               <h5>{thought.thoughtText}</h5>
               <button onClick={() => removeThought(thought._id)}>Delete</button>
-              <button onClick={() => editThought(thought._id, "I changed my mind about this thought")}>Update</button>
+              <button
+                onClick={() =>
+                  editThought(
+                    thought._id,
+                    "I changed my mind about this thought"
+                  )
+                }
+              >
+                Update
+              </button>
             </div>
           </div>
         ))}
