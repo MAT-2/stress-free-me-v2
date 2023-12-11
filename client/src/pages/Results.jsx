@@ -85,7 +85,7 @@ const Results = () => {
             <div className="card shadow-lg" style={styles.card}>
               <div className="card-body">
                 <h1>How are you feeling today? Log your thoughts to keep track.</h1>
-                <blockquote>{thoughts.length > 0 ? thoughts[0].thoughtText : "No thoughts yet."}</blockquote>
+                
               </div>
               <div className="m-3 p-2 border border-dark align-content-center">
                 <ThoughtForm />
