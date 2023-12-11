@@ -1,11 +1,8 @@
-// import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import AuthService from "../utils/auth";
 import { useState, useEffect } from "react";
-import { useMutation } from "@apollo/client";
-import { USER_RESPONSE } from "../utils/mutations";
 
 //Use state to cycle through the questions.
 //Only things changing would be question names, and the next cycled question. Form is the same.
@@ -79,42 +76,12 @@ function SurveyQuestions() {
       ...previous,
       [questions[activeQuestion].value]: parseInt(selectedOption),
     }));
-    //TODO: create an if statement to cycle through the array for each question. If it is at end of array, the button
-    //will lead to another page for the results.
     console.log(questions);
     if (activeQuestion === survey.questions.length - 1) {
-      //the API call at line 84
-      // await storeData();
-      //TODO: Insert location.replace or location.assign to go to results page once questions are cycled through completely.
       setActiveQuestion(activeQuestion + 1);
     } else {
       setActiveQuestion(activeQuestion + 1);
-      //TODO: Need store response using State, so when time comes, all info is passed into mutation to put data into database.
-      //Create an object with State to record all responses. Within the state, create an object to send backend.
-
-      // setResults({
-      //   ...results,
-      //   value: {
-      //     ...results.target.value,
-      //   },
-      // });
     }
-    // useEffect(async () => {
-    //   if (survey.questions.length === 8) {
-    //     await storeData();
-    //   }
-    // }, []);
-    //Creating a click event to go to previous question.
-
-    // const previousQuestion = () => {
-    //   if (activeQuestion === survey.length + 1) {
-    //TODO: Insert location.replace to go to results page once questions are cycled through completely.
-    //   } else {
-    //     setActiveQuestion((prev) => prev - 1);
-    //TODO: populate question here, will need to have the saved responses using state.
-    //     onValueChange();
-    //   }
-    //};
   };
   useEffect(() => {
     async function storeData() {

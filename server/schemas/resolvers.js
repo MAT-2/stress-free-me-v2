@@ -93,11 +93,6 @@ const resolvers = {
           },
           { new: true }
         );
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $push: { thoughts: thought._id } },
-          { new: true, upsert: true }
-        );
 
         return thought;
       }
